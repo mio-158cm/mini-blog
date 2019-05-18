@@ -1,0 +1,10 @@
+  <div class="contents row">
+  <div class=>
+    <%= form_tag("/tweets/#{@tweet.id}", method: :patch ) do %>
+      <h3>
+        Edit
+      </h3>
+      <textarea cols="30" name="text" placeholder="text" rows="10" class="box2"><%= @tweet.text %></textarea>
+      <input type="submit" value="SENT" class="btn-gradient-radius">
+    <% end %>
+  </div>

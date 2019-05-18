@@ -1,0 +1,207 @@
+@import "compass";
+
+/*
+ * "ほのか明朝" licensed under the IPA Font License Agreement v1.0
+ * http://fontfree.me/966（配布元のURL）
+ * http://ipafont.ipa.go.jp/（IPAフォントのURL）
+ * http://ipafont.ipa.go.jp/ipa_font_license_v1.html（IPAフォントライセンスv1.0のURL）
+ */
+@font-face {
+    font-family: 'ほのかアンティーク丸';
+    src: url('font_1_ant-maru.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'Brownhill Script';
+    src: url('Brownhill Script.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  background: linear-gradient(-45deg, rgba(246, 255, 0, .8), rgba(255, 0, 161, .8)),
+  url(https://masa1125-dreamaction.com/wp-content/uploads/2017/12/121435.jpg);
+  background-size: cover;
+
+}
+header{
+  font-family: 'Brownhill Script';
+  src: url('Brownhill Script.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+h3{
+  color:white;
+  font-family: 'Brownhill Script';
+  src: url('Brownhill Script.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+h2{
+  color:white;
+}
+.brand-logo{
+  margin-left:80px;
+}
+.material-icons{
+  font-size:20px;
+
+}
+.index-box{
+  padding:0 60px;
+  opacity: 0.8;
+}
+
+.contents{
+  text-align: center;
+  padding: 0 100px 0 100px;
+}
+.post-text{
+  padding-left:40px;
+}
+.editer{
+  padding-right:40px;
+}
+
+.card-content{
+  width:900px;
+}
+.right{
+  padding-right:80px;
+
+}
+
+.btn-gradient-radius {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+
+}
+
+.btn-gradient-radius:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+.box2 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: pink;/*文字色*/
+  background: #FFF;
+  border: solid 3px pink;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+.box2 p {
+  margin: 0;
+  padding: 0;
+}
+.box2:hover {
+  border: solid 3px #ce93d8;
+}
+.container {
+  font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.Header__shape {
+  animation-duration: 4s;
+  animation-timing-function: cubic-bezier(.18,1.17,.03,1.46);
+  animation-fill-mode: backwards;
+  transform-origin: center;
+  // this here is the good stuff
+  transform-box: fill-box;
+}
+
+
+// aaand the rest of the code
+
+
+.Header {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.Header__svg {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  will-change: transform;
+}
+.Header__title {
+  font-family: Avenir, Futura, 'Open Sans', 'Gill Sans', 'Helvetica Neue', Ariel, sans-serif;
+  font-weight: bold;
+  font-size: 6vw;
+  margin: 0;
+}
+
+.bigSquare {
+  animation-name: bigSquare;
+}
+@keyframes bigSquare {
+  from { transform: translateY(10%) rotate(-80deg) scale(0); }
+  to { transform: translateY(0) rotate(0deg) scale(1); }
+}
+.littleSquare {
+  animation-name: littleSquare;
+}
+@keyframes littleSquare {
+  from { transform: translate(226%, 183%) rotate(140deg) scale(0) ; }
+  to { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+}
+.triangle {
+  animation-name: triangle;
+}
+@keyframes triangle {
+  from { transform: rotate(-140deg) scale(0) ; }
+  to { transform: rotate(0deg) scale(1); }
+}
+.hoop {
+  animation-name: hoop;
+}
+@keyframes hoop {
+  from { transform: translate(-160%, -33%) scale(0) ; }
+  to { transform: translate(0%, 0%) scale(1); }
+}
+.bigCircle {
+  animation-name: bigCircle;
+}
+@keyframes bigCircle {
+  from { transform: scale(0) translate(60%, 3%); }
+  to { transform: scale(1) translate(0%, 0%); }
+}
+.littleCircle {
+  animation-name: littleCircle;
+}
+@keyframes littleCircle {
+  from { transform: scale(0) }
+  to { transform: scale(1) }
+}
+
+// some lovely sass fun to stagger the animation
+
+@for $i from 1 to 12 {
+  .Header__shape:nth-child(#{$i}) {
+    animation-delay: $i * 0.16s;
+  }
+}
+
+.normal-box2{
+  margin: 1em 0;
+  padding: 1em;
+  background-color: #fce4ec;
+  border-radius: 10px;
+}
+
+.normal-box2 p{
+  margin: 0;
+  padding: 0;
+}

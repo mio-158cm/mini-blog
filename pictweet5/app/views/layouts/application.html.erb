@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MiniBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style type="text/css" href="./style.css"></style>
+  <link rel="stylesheet" href="style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="path-to-css-directory/repaintless.css" rel="stylesheet"></link>
+  </head>
+
+  <body>
+   <header class="header">
+     <nav class="pink">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Mini App</a>
+
+      <% if user_signed_in? %>
+             <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li>
+              <a class="post" href="/tweets/new">Post</a>
+              </li>
+              <li>
+               <%= link_to "LogOut", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+        </div>
+      <% else %>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li>
+          <%= link_to "LogIn", new_user_session_path, :class => 'post' %>
+          </li>
+          <li>
+          <%= link_to "NewAccount", new_user_registration_path, :class => 'post' %>
+          </li>
+        </div>
+      <% end %>
+    </div>
+     </nav>
+  </header>
+    <%= yield %>
+  </body>
+</html>
